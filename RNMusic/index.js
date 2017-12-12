@@ -1,4 +1,10 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+'use strict'
 
-AppRegistry.registerComponent('RNMusic', () => App);
+import React from 'react'
+import { 
+	AppRegistry 
+} from 'react-native';
+// import App from './App';
+import setup from './js/setup'
+
+AppRegistry.registerComponent('RNMusic', setup);
