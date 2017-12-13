@@ -2,6 +2,7 @@ import React, {
 	Component
 } from 'react'
 import {
+	StyleSheet,
 	View,
 	Text
 } from 'react-native'
@@ -17,5 +18,9 @@ class InfoTop extends Component{
 			<Text>InfoTop</Text>
 			);
 	}
+
 }
-export {InfoTop}
+
+
+
+export default InfoTop

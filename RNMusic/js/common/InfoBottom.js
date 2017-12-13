@@ -18,4 +18,4 @@ class InfoBottom extends Component{
 			);
 	}
 }
-export {InfoBottom}
+export default InfoBottom

@@ -18,4 +18,4 @@ class InfoContent extends Component{
 			);
 	}
 }
-export {InfoContent}
+export default InfoContent

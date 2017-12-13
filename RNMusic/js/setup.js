@@ -1,17 +1,21 @@
 import React, {
 	Component
 } from 'react'
-import {Provider} from 'react-redux'
+import {Provider, connect} from 'react-redux'
 import store from './store/configureStore'
 
-import {HomePage} from './pages/HomePage'
+import HomePage from './pages/HomePage'
+
+const App = connect()(HomePage);
 
 const setup = () => {
 	return () => {
 		return ( 
-			<HomePage/>
+			<Provider store={store}>
+				<App/>
+			</Provider>
 			);
 	}
 }
 
-export default setup
+export default setup;

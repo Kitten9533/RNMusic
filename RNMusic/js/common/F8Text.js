@@ -66,7 +66,7 @@ function normalize(size:number):number {
 
 const styles = StyleSheet.create({
   font: {
-    // fontFamily: require('../env').fontFamily,
+    fontFamily: require('../env').fontFamily,
   },
   h1: {
     fontSize: normalize(24),

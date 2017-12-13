@@ -5,17 +5,19 @@ import {
 	View,
 	Text
 } from 'react-native'
-import {InfoTop} from '../common/InfoTop'
-import {InfoContent} from '../common/InfoContent'
-import {InfoBottom} from '../common/InfoBottom'
+// import xFetch from '../services/xFetch'
+import InfoTop from '../common/InfoTop'
+import InfoContent from '../common/InfoContent'
+import InfoBottom from '../common/InfoBottom'
 class UserInfo extends Component{
 	constructor(props) {
-	  super(props);
+	  super();
 	
 	  this.state = {};
 	}
 
 	render(){
+		// this.fetchData();
 		return (
 			<View>
 				<InfoTop/>
@@ -24,5 +26,9 @@ class UserInfo extends Component{
 			</View>
 			);
 	}
+
+	// fetchData(){
+	// 	var info = xFetch('/user/detail?uid=102474474');
+	// }
 }
-export {UserInfo}
+export default UserInfo
