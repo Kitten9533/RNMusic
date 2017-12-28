@@ -26,6 +26,7 @@
 		"react-native-scrollable-tab-view": "^0.7.0",
 		"react-native-swiper": "^1.5.4",
 		"react-native-vector-icons": "^3.0.0",
+		"react-navigation": "^1.0.0-beta.21",
 		"react-redux": "^4.4.5",
 		"redux": "^3.6.0",
 		"redux-logger": "^2.6.1",

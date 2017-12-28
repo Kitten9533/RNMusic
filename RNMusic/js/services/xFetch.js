@@ -11,9 +11,13 @@ const formatResponse = res => {
 
 async function xFetch(path, options = {method: 'GET'}){
 	const normalFetch = fetch(getPath(path), options)
-		.then((response) => {return response.json()});
+		.then((response) => {return response.json()})
+		.catch((err)=>{
+			throw new Error(`Error in xFetch ${err}`);
+			return {code: null};
+		});
 	const res = await timeoutPromise(TIME_OUT, normalFetch.then(formatResponse));
-	console.log('PATH:' + getPath(path));
+	// console.log('PATH:' + getPath(path));
 	if(res.code === 200){
 		return res.res;
 	}else {

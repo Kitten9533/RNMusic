@@ -2,6 +2,7 @@ import React, {
 	Component
 } from 'react'
 import {
+	StyleSheet,
 	View,
 	Text
 } from 'react-native'
@@ -17,18 +18,20 @@ class UserInfo extends Component{
 	}
 
 	render(){
-		// this.fetchData();
 		return (
-			<View>
+			<View style={styles.container}>
 				<InfoTop/>
 				<InfoContent/>
 				<InfoBottom/>
 			</View>
 			);
 	}
-
-	// fetchData(){
-	// 	var info = xFetch('/user/detail?uid=102474474');
-	// }
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+	}
+});
+
 export default UserInfo

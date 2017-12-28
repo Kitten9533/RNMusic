@@ -19,9 +19,15 @@ export const login = async(user) => {
 
 export const getUid = async() => {
 	const gUid = await getSavedUid();
-	alert(gUid);
 	return {
 		type: GET_UID,
 		gUid
+	}
+}
+
+export const getUserDetail = async(info) => {
+	return {
+		type: GET_USER_INFO,
+		user: info
 	}
 }

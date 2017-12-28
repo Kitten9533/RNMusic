@@ -9,12 +9,14 @@ import {
     DrawerLayoutAndroid,
     Text,
     Button,
+    Dimensions,
+    PixelRatio,
 } from 'react-native'
 import {connect} from 'react-redux'
 import UserInfo from './UserInfo'
-import {login, getUid} from '../actions/user'
+import {login, getUid, getUserDetail} from '../actions/user'
 import config from '../services/config'
-import {userLogin} from '../services/user'
+import {userLogin, userDetail} from '../services/user'
 
 class HomePage extends Component {
 	constructor(props){
@@ -25,6 +27,7 @@ class HomePage extends Component {
 		};
 		this.login = this.login.bind(this);
 		this.getUid = this.getUid.bind(this);
+		this.getUserDetail = this.getUserDetail.bind(this);
 	}
 
 	_validFields(phone, password){
@@ -66,6 +69,20 @@ class HomePage extends Component {
 		}
 	}
 
+	async getUserDetail(){
+		const {dispatch} = this.props;
+		try{
+			const info = await userDetail();
+			dispatch(getUserDetail(info)).
+				then(() => {
+					// this.setState({})
+				});
+		}
+		catch(err){
+			throw new Error('getUserDetail Failed:' + err);
+		}
+	}
+
 	render(){
 		var navigationView = (
 			<View style={{flex: 1, backgroundColor: '#fff'}}>
@@ -73,20 +90,29 @@ class HomePage extends Component {
 			</View>
 			);
 
+		// const deviceW = Dimensions.get('window').height;
+		// const ScreenScale = Dimensions.get('window').scale;
+		// console.log(`width: ${deviceW} + Scale:  ${ScreenScale}`);
+
+		// const pi = PixelRatio.get();
+		// console.log(`pi: ${pi}`);
+
 		let	loading
-		// if(this.state.loading){
-			loading
-				=
-				<ActivityIndicator 
-					style={styles.loading}
-					animating={true}
-					size="large" 
-				/>
-		// }
+			// loading
+			// 	=
+			// 	<View>
+			// 		<ActivityIndicator 
+			// 			style={styles.loading}
+			// 			animating={true}
+			// 			size="large" 
+			// 		/>
+			// 	</View>
+
+		this.getUserDetail();
 
 		return (
 			<DrawerLayoutAndroid
-				drawerWidth={300}
+				drawerWidth={350}
 				drawerPosition={DrawerLayoutAndroid.positions.left}
 				renderNavigationView={() => navigationView}
 			>
@@ -103,8 +129,14 @@ class HomePage extends Component {
 			            color="#E5E5E5"
 			            accessibilityLabel="Ok, Great!"
 			          />
+			        <Button
+			            onPress={this.getUserDetail}
+			            title="getUserDetail"
+			            color="#E5E5E5"
+			            accessibilityLabel="Ok, Great!"
+			          />
 			        {loading}
-			        <Text>{JSON.stringify(this.props.user.uid)}</Text>
+			        <Text>{JSON.stringify(this.props.user)}</Text>
 				</View>
 			</DrawerLayoutAndroid>
 		);
@@ -112,15 +144,22 @@ class HomePage extends Component {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+	},
 	loading: {
 		flex: 1,
 		alignItems: 'center',
-		height: 40,
 		justifyContent: 'center',
-		// marginTop: 300
 		borderWidth: 1,
 		borderStyle: 'solid',
-		borderColor: 'red'
+		borderColor: 'red',
+		zIndex: 2,
+		position: 'absolute',
+		top: 0,
+		right: 0,
+		width: null,
+		height: null,
 	}
 });
 
