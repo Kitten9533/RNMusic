@@ -22,8 +22,8 @@ class InfoContent extends Component{
 		console.log(`rowData: ${rowData}`);
 		return (
 			<View>
-				<Text style={{fontFamily:'iconfont'}}>&#xe623;</Text>
-				{/*<Text>{rowData}</Text>*/}
+				{/*<Text style={{fontFamily:'iconfont'}}>&#xe623;</Text>*/}
+				{<Text>{rowData}</Text>}
 			</View>
 
 			);

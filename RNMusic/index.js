@@ -7,4 +7,5 @@ import {
 // import App from './App';
 import setup from './js/setup'
 
-AppRegistry.registerComponent('RNMusic', setup);
+import Home from './js/pages/Home'
+AppRegistry.registerComponent('RNMusic', () => Home);

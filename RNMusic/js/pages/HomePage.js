@@ -19,6 +19,9 @@ import config from '../services/config'
 import {userLogin, userDetail} from '../services/user'
 
 class HomePage extends Component {
+	static navigationOptions = {
+    	title: 'HomePage',
+  	};
 	constructor(props){
 		super();
 		// this.state = this.props;
@@ -28,6 +31,7 @@ class HomePage extends Component {
 		this.login = this.login.bind(this);
 		this.getUid = this.getUid.bind(this);
 		this.getUserDetail = this.getUserDetail.bind(this);
+		this.goFirst = this.goFirst.bind(this);
 	}
 
 	_validFields(phone, password){
@@ -83,7 +87,12 @@ class HomePage extends Component {
 		}
 	}
 
+	goFirst(){
+		// RootNavigation.navigate('First');
+	}
+
 	render(){
+		// alert(this.props);
 		var navigationView = (
 			<View style={{flex: 1, backgroundColor: '#fff'}}>
 				<UserInfo/>
@@ -112,7 +121,7 @@ class HomePage extends Component {
 
 		return (
 			<DrawerLayoutAndroid
-				drawerWidth={350}
+				drawerWidth={250}
 				drawerPosition={DrawerLayoutAndroid.positions.left}
 				renderNavigationView={() => navigationView}
 			>
@@ -132,6 +141,12 @@ class HomePage extends Component {
 			        <Button
 			            onPress={this.getUserDetail}
 			            title="getUserDetail"
+			            color="#E5E5E5"
+			            accessibilityLabel="Ok, Great!"
+			          />
+			        <Button
+			            onPress={this.goFirst}
+			            title="goFirst"
 			            color="#E5E5E5"
 			            accessibilityLabel="Ok, Great!"
 			          />
