@@ -51,7 +51,7 @@ class MusicListContent extends React.Component{
 			html.push(
 				<View key={index} style={{width: index !== 2 ? Dimensions.get('window').width/2.01 : Dimensions.get('window').width, alignItems: 'center', justifyContent: 'center', marginBottom: 10, }}>
 				    <Image 
-			            style={{width: index !== 2 ? Dimensions.get('window').width/2.01 : Dimensions.get('window').width, height: index !== 2 ? Dimensions.get('window').width/3.9 : Dimensions.get('window').width/2.8}}
+			            style={{width: index !== 2 ? Dimensions.get('window').width/2.01 : Dimensions.get('window').width, height: index !== 2 ? Dimensions.get('window').width/4.2 : Dimensions.get('window').width/2.8}}
 			            source={{uri: item.picUrl}}
 			            resizeMode={'stretch'}
 			          />

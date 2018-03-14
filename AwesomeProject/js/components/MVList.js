@@ -39,8 +39,9 @@ class MVList extends React.Component{
 			<View>
 				<Image 
 					source={{uri: rowData.cover}} 
-					style={{width: Dimensions.get('window').width, height: 300,}}
+					style={{width: Dimensions.get('window').width, height: 200,}}
 				/>
+				<Text numberOfLines={1}></Text>
 			</View>
 			);
 	}

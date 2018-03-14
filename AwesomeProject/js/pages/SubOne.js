@@ -17,7 +17,7 @@ import MusicListFourCell from '../components/MusicListFourCell'
 class SubOne extends React.Component{
 	render(){
 		return (
-			<ScrollView>
+			<ScrollView style={styles.container}>
 				<Banner/>
 				<Section/>
 				<MusicList type={"personalized"} />
@@ -30,7 +30,7 @@ class SubOne extends React.Component{
 
 const styles = StyleSheet.create({
 	container: {
-		
+		backgroundColor: '#fff',
 	}
 })
 

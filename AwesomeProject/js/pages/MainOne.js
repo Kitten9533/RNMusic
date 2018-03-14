@@ -7,7 +7,7 @@ import {
 	Text,
 	Button
 } from 'react-native'
-import { StackNavigator,TabNavigator,DrawerNavigator } from 'react-navigation';
+// import { StackNavigator,TabNavigator,DrawerNavigator } from 'react-navigation';
 
 class MainOne extends React.Component{
 	render(){
@@ -16,7 +16,7 @@ class MainOne extends React.Component{
 			<View style={styles.container}>
 				<Text>HomeScreen</Text>
 				<Button 
-					onPress={() => navigate('MainTwo')}
+					onPress={() => navigate('Player')}
 					title="111111111"	
 					>
 				</Button>
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
+		backgroundColor: '#fff',
 	}
 })
 

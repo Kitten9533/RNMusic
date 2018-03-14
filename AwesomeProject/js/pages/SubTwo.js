@@ -13,7 +13,7 @@ import MVList from '../components/MVList'
 class SubTwo extends React.Component{
 	render(){
 		return (
-			<ScrollView>
+			<ScrollView style={styles.container}>
 				<MVList />
 			</ScrollView>
 		)
@@ -22,7 +22,7 @@ class SubTwo extends React.Component{
 
 const styles = StyleSheet.create({
 	container: {
-
+		backgroundColor: '#fff',
 	}
 })
 

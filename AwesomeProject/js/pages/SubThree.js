@@ -7,11 +7,13 @@ import {
 	Text,
 	Button
 } from 'react-native'
+import Banner from '../components/Banner'
 
 class SubThree extends React.Component{
 	render(){
 		return (
 			<View style={styles.container}>
+				<Banner />
 				<Text>SubThree</Text>
 			</View>
 		)
@@ -20,9 +22,7 @@ class SubThree extends React.Component{
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
+		backgroundColor: '#fff',
 	}
 })
 

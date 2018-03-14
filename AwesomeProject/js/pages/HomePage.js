@@ -6,12 +6,14 @@ import {
   View
 } from 'react-native';
 import { StackNavigator,TabNavigator,DrawerNavigator } from 'react-navigation';
-import TopNavigation from '../navigation/TopNavigation';
+// import TopNavigation from '../navigation/TopNavigation';
+import CommonNavigation from '../navigation/CommonNavigation';
 
 class HomePage extends React.Component{
 	render(){
 		return (
-			<TopNavigation/>
+			// <TopNavigation/>
+			<CommonNavigation/>
 		)
 	}
 }
